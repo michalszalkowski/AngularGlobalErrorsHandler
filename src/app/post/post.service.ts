@@ -16,13 +16,6 @@ export class PostService {
   }
 
   getPosts(): any {
-    return this.http.get(this.url)
-      .catch((error: Response) => {
-        if (error.status === 404) {
-          console.log('Some special case')
-        }
-        // pass error that is not special case, then GlobalHandler with catch this
-        else throw error;
-      });
+    return this.http.get(this.url);
   }
 }
